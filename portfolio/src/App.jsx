@@ -9,6 +9,9 @@ import Contact from "./components/Contact";
 export default function App() {
   const [lang, setLang] = useState('pt');
   const portugueseMode = document.getElementById("lang-toggle")?.checked;
+  const [openXP0, setOpenXP0] = useState(false)
+  const [openXP1, setOpenXP1] = useState(false)
+  const [openXP2, setOpenXP2] = useState(false)
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     const links = document.querySelectorAll("nav a");
@@ -33,7 +36,6 @@ export default function App() {
 
     sections.forEach(section => observer.observe(section));
   }, []);
-
 
   useEffect(() => {
     console.log(lang)
@@ -247,28 +249,56 @@ export default function App() {
                   <span className="lang-pt">Experiência Profissional</span>
                   <span className="lang-en">Professional Experience</span>
                 </h2>
-                
+
               </motion.div>
             </div>
-            <p className="text-primary/80 text-[1.2rem] mb-8">Cantinho das Pizzas e do Açaí • 2025 - atual</p>
-            
             <div className="grid grid-cols-[40px_1fr] gap-x-6">
-              
+
               <div className="flex flex-col items-center gap-1">
                 <div className="flex items-center justify-center size-10 rounded-full border border-primary/40 bg-primary/5">
-                  <span className="material-symbols-outlined text-primary text-xl">rocket</span>
+                  <span className="material-symbols-outlined text-primary/80 text-xl">code</span>
                 </div>
                 <div className="w-0.5 bg-primary/10 h-full grow my-1"></div>
               </div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.55 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <div className="flex flex-col pb-7">
+                <div className="flex flex-col pb-8">
                   <h3 className="lang-pt text-xl font-bold text-white">Desenvolvedor Full-Stack Pleno</h3>
                   <h3 className="lang-en text-xl font-bold text-white">Full-Stack Developer</h3>
-                  {/* <p className="text-primary/80 font-medium -mb-8">Cantinho das Pizzas e do Açaí • 2026 - atual</p> */}
+                  <p className="text-primary/80 font-medium mb-2">Cantinho das Pizzas e do Açaí • 2026 - atual</p>
+
+                  <button className="bg-primary w-fit px-5 py-1 rounded-[10px] mt-[10px]" onClick={() => setOpenXP0(prev => !prev)}>
+                    {openXP0 ? 'Ocultar' : 'Ver mais'}
+                  </button>
+
+                  {openXP0 &&
+                    <motion.div
+                      initial={{ opacity: 0, y: -20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <p className="text-slate-400 leading-relaxed mt-3">
+                        <span className="lang-pt">Desenvolvimento em andamento de um sistema ERP completo para automação operacional, com projeção de redução superior a R$ 3.000/mês em custos operacionais e ganho significativo de eficiência nos processos internos.
+                          Implementação de chatbot para WhatsApp integrado à API da OpenAI, com back-end unificado em Node.js, responsável pelo processamento automatizado de pedidos e comunicação em tempo real.
+                          Desenvolvimento de painel web em React (JavaScript), Node.js e MySQL, centralizando toda a operação do delivery, incluindo:
+                          <ul className="flex gap-3 flex-col">
+                            <li>• Gestão completa de pedidos (histórico, filtros, edição, impressão e exclusão)</li>
+                            <li>• Dashboard financeiro com métricas estratégicas (ex: ticket médio, produto mais vendido, formas de pagamento)</li>
+                            <li>• Gerenciamento dinâmico de produtos com integração direta ao banco de dados</li>
+                            <li>• Rastreamento em tempo real de entregadores com atribuição de pedidos</li>
+                            <li>• Aplicativo móvel para entregadores com sincronização de rotas e atualização de status</li>
+                          </ul>
+                        </span>
+
+                        <span className="lang-en">Developed custom e-commerce engines and CMS platforms. Implemented automated CI/CD
+                          pipelines and managed complex PostgreSQL databases.</span>
+                      </p>
+                    </motion.div>
+                  }
+
                 </div>
               </motion.div>
 
@@ -283,30 +313,42 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <div className="flex flex-col pb-17">
+                <div className="flex flex-col pb-8">
                   <h3 className="lang-pt text-xl font-bold text-white">Desenvolvedor Full-Stack Júnior</h3>
                   <h3 className="lang-en text-xl font-bold text-white">Junior Full-Stack Developer</h3>
-                  {/* <p className="text-primary/80 font-medium mb-2">Cantinho das Pizzas e do Açaí • 2025 - 2026</p> */}
-                  <p className="text-slate-400 leading-relaxed mt-3">
-                    <span className="lang-pt">Desenvolvimento em andamento de um sistema ERP completo para automação operacional, com projeção de redução superior a R$ 3.000/mês em custos operacionais e ganho significativo de eficiência nos processos internos.
-                      Implementação de chatbot para WhatsApp integrado à API da OpenAI, com back-end unificado em Node.js, responsável pelo processamento automatizado de pedidos e comunicação em tempo real.
-                      Desenvolvimento de painel web em React (JavaScript), Node.js e MySQL, centralizando toda a operação do delivery, incluindo:
-                      <ul className="flex gap-3 flex-col">
-                        <li>• Gestão completa de pedidos (histórico, filtros, edição, impressão e exclusão)</li>
-                        <li>• Dashboard financeiro com métricas estratégicas (ex: ticket médio, produto mais vendido, formas de pagamento)</li>
-                        <li>• Gerenciamento dinâmico de produtos com integração direta ao banco de dados</li>
-                        <li>• Rastreamento em tempo real de entregadores com atribuição de pedidos</li>
-                        <li>• Aplicativo móvel para entregadores com sincronização de rotas e atualização de status</li>
-                      </ul>
-                    </span>
+                  <p className="text-primary/80 font-medium mb-2">Cantinho das Pizzas e do Açaí • 2025 - 2026</p>
 
-                    <span className="lang-en">Developed custom e-commerce engines and CMS platforms. Implemented automated CI/CD
-                      pipelines and managed complex PostgreSQL databases.</span>
-                  </p>
+                  <button className="bg-primary w-fit px-5 py-1 rounded-[10px] mt-[10px]" onClick={() => setOpenXP1(prev => !prev)}>
+                    {openXP1 ? 'Ocultar' : 'Ver mais'}
+                  </button>
+
+                  {openXP1 &&
+                    <motion.div
+                      initial={{ opacity: 0, y: -20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <p className="text-slate-400 leading-relaxed mt-3">
+                        <span className="lang-pt">Desenvolvimento em andamento de um sistema ERP completo para automação operacional, com projeção de redução superior a R$ 3.000/mês em custos operacionais e ganho significativo de eficiência nos processos internos.
+                          Implementação de chatbot para WhatsApp integrado à API da OpenAI, com back-end unificado em Node.js, responsável pelo processamento automatizado de pedidos e comunicação em tempo real.
+                          Desenvolvimento de painel web em React (JavaScript), Node.js e MySQL, centralizando toda a operação do delivery, incluindo:
+                          <ul className="flex gap-3 flex-col">
+                            <li>• Gestão completa de pedidos (histórico, filtros, edição, impressão e exclusão)</li>
+                            <li>• Dashboard financeiro com métricas estratégicas (ex: ticket médio, produto mais vendido, formas de pagamento)</li>
+                            <li>• Gerenciamento dinâmico de produtos com integração direta ao banco de dados</li>
+                            <li>• Rastreamento em tempo real de entregadores com atribuição de pedidos</li>
+                            <li>• Aplicativo móvel para entregadores com sincronização de rotas e atualização de status</li>
+                          </ul>
+                        </span>
+
+                        <span className="lang-en">Developed custom e-commerce engines and CMS platforms. Implemented automated CI/CD
+                          pipelines and managed complex PostgreSQL databases.</span>
+                      </p>
+                    </motion.div>
+                  }
+
                 </div>
               </motion.div>
-
-
 
               <div className="flex flex-col items-center gap-1">
                 <div className="flex items-center justify-center size-10 rounded-full border border-primary/20 bg-primary/5">
@@ -322,30 +364,45 @@ export default function App() {
                 <div className="flex flex-col">
                   <h3 className="text-xl font-bold text-white">Business Intelligence Analyst</h3>
                   <p className="text-primary/60 font-medium mb-2">ESP Inteligência de Negócios • 2025 - 2025</p>
-                  <p className="text-slate-400 leading-relaxed">
-                    <ul className="lang-pt flex flex-col gap-3">
-                      <li>• Desenvolvimento de indicadores, relatórios e dashboards em BI (Power BI)</li>
-                      <li>• Levantamento de requisitos e proposição de soluções alinhadas às melhores práticas de mercado</li>
-                      <li>• Integração e sincronização de dados entre sistemas e bancos de dados</li>
-                      <li>• Criação e gestão de usuários e permissões no Power BI</li>
-                      <li>• Automação de rotinas e processos de dados</li>
-                      <li>• Suporte ao cliente e apoio técnico</li>
-                      <li>• Documentação técnica e participação em reuniões estratégicas internas</li>
-                    </ul>
 
-                    <ul className="lang-en">
-                      <li>• Development of indicators, reports and dashboards in BI (Power BI)</li>
-                      <li>• Requirements gathering and proposal of solutions aligned with best market practices</li>
-                      <li>• Data integration and synchronization between systems and databases</li>
-                      <li>• Creation and management of users and permissions in Power BI</li>
-                      <li>• Automation of data routines and processes</li>
-                      <li>• Client support and technical assistance</li>
-                      <li>• Technical documentation and participation in internal strategic meetings</li>
-                    </ul>
+                  <button className="bg-primary w-fit px-5 py-1 rounded-[10px] mt-[10px]" onClick={() => setOpenXP2(prev => !prev)}>
+                    {openXP2 ? 'Ocultar' : 'Ver mais'}
+                  </button>
 
-                    <span className="lang-en">Built responsive front-end components using React and styled-components. Maintained
-                      internal dashboards and API documentation.</span>
-                  </p>
+                  {openXP2 &&
+                    <motion.div
+                      initial={{ opacity: 0, y: -20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <p className="text-slate-400 leading-relaxed">
+                        <ul className="lang-pt flex flex-col gap-3">
+                          <li>• Desenvolvimento de indicadores, relatórios e dashboards em BI (Power BI)</li>
+                          <li>• Levantamento de requisitos e proposição de soluções alinhadas às melhores práticas de mercado</li>
+                          <li>• Integração e sincronização de dados entre sistemas e bancos de dados</li>
+                          <li>• Criação e gestão de usuários e permissões no Power BI</li>
+                          <li>• Automação de rotinas e processos de dados</li>
+                          <li>• Suporte ao cliente e apoio técnico</li>
+                          <li>• Documentação técnica e participação em reuniões estratégicas internas</li>
+                        </ul>
+
+                        <ul className="lang-en">
+                          <li>• Development of indicators, reports and dashboards in BI (Power BI)</li>
+                          <li>• Requirements gathering and proposal of solutions aligned with best market practices</li>
+                          <li>• Data integration and synchronization between systems and databases</li>
+                          <li>• Creation and management of users and permissions in Power BI</li>
+                          <li>• Automation of data routines and processes</li>
+                          <li>• Client support and technical assistance</li>
+                          <li>• Technical documentation and participation in internal strategic meetings</li>
+                        </ul>
+
+                        <span className="lang-en">Built responsive front-end components using React and styled-components. Maintained
+                          internal dashboards and API documentation.</span>
+                      </p>
+                    </motion.div>
+                  }
+
+
                 </div>
               </motion.div>
             </div>
@@ -358,7 +415,7 @@ export default function App() {
               <div>
                 <div className="flex items-center gap-4 mb-2">
                   <span className="material-symbols-outlined text-primary text-3xl">grid_view</span>
-                  <h2 className="text-3xl font-bold text-white tracking-tight">
+                  <h2 className="text-[1.4rem] font-bold text-white tracking-tight">
                     <span className="lang-pt">Projetos em Destaque</span>
                     <span className="lang-en">Featured Projects</span>
                   </h2>
@@ -426,7 +483,7 @@ export default function App() {
           <div className="max-w-[960px] mx-auto">
             <div className="flex items-center gap-4 mb-12">
               <span className="material-symbols-outlined text-primary text-3xl">school</span>
-              <h2 className="text-3xl font-bold text-white tracking-tight">
+              <h2 className="text-[1.8rem] font-bold text-white tracking-tight">
                 <span className="lang-pt">Educação</span>
                 <span className="lang-en">Education</span>
               </h2>
@@ -508,8 +565,8 @@ export default function App() {
                   className='custom-class text-6xl! md:text-7xl! font-black leading-[1.1] tracking-tight text-primary! w-[600px]'
                   style={{ color: "rgb(37, 244, 106) !important" }}
                 > */}
-                <p className="lang-pt text-6xl">Arsenal Técnico</p>
-                <p className="lang-en text-6xl">Technical Arsenal</p>
+                <p className="lang-pt text-[1.8rem]">Arsenal Técnico</p>
+                <p className="lang-en text-[1.8rem]">Technical Arsenal</p>
                 {/* </GlitchText> */}
               </motion.div>
 
@@ -518,7 +575,7 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <p className="lang-pt text-slate-400 max-w-2xl mx-auto mt-10">
+                <p className="lang-pt text-slate-400 max-w-2xl mx-auto mt-5">
                   Focado em tecnologias web modernas e construção de arquiteturas escaláveis e sustentáveis.
                 </p>
                 <p className="lang-en text-slate-400 max-w-2xl mx-auto mt-10">
@@ -631,7 +688,7 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="lang-pt text-4xl font-bold text-white mb-6 leading-tight">
+                <h2 className="lang-pt text-[1.8rem] font-bold text-white mb-6 leading-tight">
                   Vamos construir algo <span className="text-primary">extraordinário</span>
                 </h2>
                 <h2 className="lang-en text-4xl font-bold text-white mb-6 leading-tight">
