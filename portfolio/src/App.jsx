@@ -12,6 +12,20 @@ export default function App() {
   const [openXP0, setOpenXP0] = useState(false)
   const [openXP1, setOpenXP1] = useState(false)
   const [openXP2, setOpenXP2] = useState(false)
+
+  const techs = [
+    { name: "JavaScript", icon: "js.png" },
+    { name: "TypeScript", icon: "ts.png" },
+    { name: "React", icon: "react.png" },
+    { name: "Angular", icon: "angular.png" },
+    { name: "Node.js", icon: "node.png" },
+    { name: "Python", icon: "py.png" },
+    { name: "Tailwind CSS", icon: "tailwind.png" },
+    { name: "MySQL", icon: "mysql.png" },
+    { name: "PostgreSQL", icon: "postgres.png" },
+    { name: "Linux", icon: "linux.png" },
+  ]
+
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     const links = document.querySelectorAll("nav a");
@@ -270,7 +284,7 @@ export default function App() {
                   <h3 className="lang-en text-xl font-bold text-white">Full-Stack Developer</h3>
                   <p className="text-primary/80 font-medium mb-2">Cantinho das Pizzas e do Açaí • 2026 - atual</p>
 
-                  <button className="bg-primary w-fit px-5 py-1 rounded-[10px] mt-[10px]" onClick={() => setOpenXP0(prev => !prev)}>
+                  <button className="bg-primary w-fit px-5 py-1 rounded-[10px] mt-[10px] text-black" onClick={() => setOpenXP0(prev => !prev)}>
                     {openXP0 ? 'Ocultar' : 'Ver mais'}
                   </button>
 
@@ -318,7 +332,7 @@ export default function App() {
                   <h3 className="lang-en text-xl font-bold text-white">Junior Full-Stack Developer</h3>
                   <p className="text-primary/80 font-medium mb-2">Cantinho das Pizzas e do Açaí • 2025 - 2026</p>
 
-                  <button className="bg-primary w-fit px-5 py-1 rounded-[10px] mt-[10px]" onClick={() => setOpenXP1(prev => !prev)}>
+                  <button className="bg-primary w-fit px-5 py-1 rounded-[10px] mt-[10px] text-black" onClick={() => setOpenXP1(prev => !prev)}>
                     {openXP1 ? 'Ocultar' : 'Ver mais'}
                   </button>
 
@@ -365,7 +379,7 @@ export default function App() {
                   <h3 className="text-xl font-bold text-white">Business Intelligence Analyst</h3>
                   <p className="text-primary/60 font-medium mb-2">ESP Inteligência de Negócios • 2025 - 2025</p>
 
-                  <button className="bg-primary w-fit px-5 py-1 rounded-[10px] mt-[10px]" onClick={() => setOpenXP2(prev => !prev)}>
+                  <button className="bg-primary w-fit px-5 py-1 rounded-[10px] mt-[10px] text-black" onClick={() => setOpenXP2(prev => !prev)}>
                     {openXP2 ? 'Ocultar' : 'Ver mais'}
                   </button>
 
@@ -401,8 +415,6 @@ export default function App() {
                       </p>
                     </motion.div>
                   }
-
-
                 </div>
               </motion.div>
             </div>
@@ -411,7 +423,7 @@ export default function App() {
 
         <section className="py-24 px-6" id="projects">
           <div className="max-w-[1200px] mx-auto">
-            <div className="flex justify-between items-end mb-12">
+            <div className="flex justify-between items-end mb-6">
               <div>
                 <div className="flex items-center gap-4 mb-2">
                   <span className="material-symbols-outlined text-primary text-3xl">grid_view</span>
@@ -420,10 +432,6 @@ export default function App() {
                     <span className="lang-en">Featured Projects</span>
                   </h2>
                 </div>
-                <p className="text-slate-400">
-                  <span className="lang-pt">Uma seleção dos meus desenvolvimentos full-stack mais impactantes.</span>
-                  <span className="lang-en">A selection of my most impactful full-stack developments.</span>
-                </p>
               </div>
               {/* <a className="text-primary text-sm font-bold border-b border-primary/30 hover:border-primary pb-1 transition-all"
                 href="#">
@@ -569,7 +577,6 @@ export default function App() {
                 <p className="lang-en text-[1.8rem]">Technical Arsenal</p>
                 {/* </GlitchText> */}
               </motion.div>
-
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -582,100 +589,24 @@ export default function App() {
                   Focused on modern web technologies and building scalable, maintainable architectures.
                 </p>
               </motion.div>
-            </div>
 
-            <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+            <div className="flex gap-6 flex-wrap justify-center px-6 mt-12">
+                {techs.map((tech, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                  >
+                    <div className="flex flex-col items-center gap-3 hover:-translate-y-0.5 transition-transform duration-300">
+                      <img src={`/${tech.icon}`} className="skill-circle size-20 rounded-full flex items-center justify-center bg-background-dark" />
+                      <span className="text-sm font-medium text-slate-300">{tech.name}</span>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-              >
-                <div className="flex flex-col items-center gap-3">
-                  <div className="skill-circle size-20 rounded-full flex items-center justify-center bg-background-dark">
-                    <span className="material-symbols-outlined text-primary text-3xl">javascript</span>
-                  </div>
-                  <span className="text-sm font-medium text-slate-300">JavaScript</span>
-                </div>
-              </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-              >
-                <div className="flex flex-col items-center gap-3">
-                  <div className="skill-circle size-20 rounded-full flex items-center justify-center bg-background-dark">
-                    <span className="material-symbols-outlined text-primary text-3xl">data_object</span>
-                  </div>
-                  <span className="text-sm font-medium text-slate-300">React / Next</span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                <div className="flex flex-col items-center gap-3">
-                  <div className="skill-circle size-20 rounded-full flex items-center justify-center bg-background-dark">
-                    <span className="material-symbols-outlined text-primary text-3xl">terminal</span>
-                  </div>
-                  <span className="text-sm font-medium text-slate-300">Node.js</span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                <div className="flex flex-col items-center gap-3">
-                  <div className="skill-circle size-20 rounded-full flex items-center justify-center bg-background-dark">
-                    <span className="material-symbols-outlined text-primary text-3xl">cloud</span>
-                  </div>
-                  <span className="text-sm font-medium text-slate-300">AWS / Cloud</span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                <div className="flex flex-col items-center gap-3">
-                  <div className="skill-circle size-20 rounded-full flex items-center justify-center bg-background-dark">
-                    <span className="material-symbols-outlined text-primary text-3xl">database</span>
-                  </div>
-                  <span className="text-sm font-medium text-slate-300">PostgreSQL</span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-              >
-                <div className="flex flex-col items-center gap-3">
-                  <div className="skill-circle size-20 rounded-full flex items-center justify-center bg-background-dark">
-                    <span className="material-symbols-outlined text-primary text-3xl">layers</span>
-                  </div>
-                  <span className="text-sm font-medium text-slate-300">Tailwind</span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
-                <div className="flex flex-col items-center gap-3">
-                  <div className="skill-circle size-20 rounded-full flex items-center justify-center bg-background-dark">
-                    <span className="material-symbols-outlined text-primary text-3xl">token</span>
-                  </div>
-                  <span className="text-sm font-medium text-slate-300">TypeScript</span>
-                </div>
-              </motion.div>
             </div>
           </div>
         </section>

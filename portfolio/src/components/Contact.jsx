@@ -39,14 +39,14 @@ export default function Contact() {
                     <input
                         name="name"
                         className="w-full bg-black/50 border-white/10 rounded-lg text-white placeholder:text-slate-600 focus:border-primary focus:ring-primary/20"
-                        placeholder="John Doe" type="text" />
+                        placeholder="Seu nome..." type="text" />
                 </div>
                 <div className="space-y-2">
                     <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">Email</label>
                     <input
                         name="email"
                         className="w-full bg-black/50 border-white/10 rounded-lg text-white placeholder:text-slate-600 focus:border-primary focus:ring-primary/20"
-                        placeholder="john@example.com" type="email" />
+                        placeholder="Seu email..." type="email" />
                 </div>
             </div>
             <div className="space-y-2">
@@ -57,7 +57,7 @@ export default function Contact() {
                 <input
                     name="subject"
                     className="w-full bg-black/50 border-white/10 rounded-lg text-white placeholder:text-slate-600 focus:border-primary focus:ring-primary/20"
-                    placeholder="Project Inquiry" type="text" />
+                    placeholder="Assunto..." type="text" />
             </div>
             <div className="space-y-2">
                 <label className="text-xs font-bold text-slate-400 uppercase tracking-widest">
@@ -67,7 +67,7 @@ export default function Contact() {
                 <textarea
                     name="message"
                     className="w-full bg-black/50 border-white/10 rounded-lg text-white placeholder:text-slate-600 focus:border-primary focus:ring-primary/20"
-                    placeholder="Tell me about your project..." rows="4"></textarea>
+                    placeholder="Me conte sobre seu projeto ou motivo do contato!" rows="4"></textarea>
             </div>
             <button
                 className="w-full py-4 bg-primary text-black font-bold rounded-lg hover:shadow-[0_0_20px_rgba(37,244,106,0.3)] transition-all flex items-center justify-center gap-2"
