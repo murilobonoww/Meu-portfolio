@@ -451,7 +451,9 @@ export default function App() {
                     <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                       style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtCfVPfI5EzIy106PJJPajwQ-1baaWtEiefPyk1sC_wdW_y2C_M88ELqhpdChUwmvU6vTMuAStfua2GkAYbzHYo0uhd6GB7kqgNQJptMw8Cah4p9mx2Su0qhp7bSwi--KaVJDMZJo-mSgTc1tlen2QP1sQhqp0f9nxp0aAHm_XzhUDPMTn0gAPTwR9u1t8YOVFoaaTqctFOc47lb3Gu7x7fjdDBBHMRpc49KNNqxzKuLeCTAqNRIA7tnHiNohdXoEAUNO58og_HvE')" }}>
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent">
+                    <img src="print_erp.png" />
+                    </div>
                   </div>
 
                   <motion.div
@@ -463,22 +465,22 @@ export default function App() {
                     <div className="p-6">
                       <div className="flex gap-2 mb-3">
                         <span
-                          className="text-[10px] font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">NEXT.JS</span>
+                          className="text-[10px] font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">REACT.JS</span>
                         <span
-                          className="text-[10px] font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">POSTGRES</span>
+                          className="text-[10px] font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">NODE.JS</span>
+                          <span
+                          className="text-[10px] font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">MySQL</span>
                       </div>
-                      <h3 className="text-xl font-bold text-white mb-2">Nexus Analytics Platform</h3>
+                      <h3 className="text-xl font-bold text-white mb-2">Sistema ERP</h3>
                       <p className="text-slate-400 text-sm mb-4">
-                        <span className="lang-pt">Dashboard de visualização de dados em tempo real com suporte multi-tenant e
-                          insights preditivos.</span>
-                        <span className="lang-en">Real-time data visualization dashboard with multi-tenant support and predictive
-                          insights.</span>
+                        <span className="lang-pt">Sistema ERP completo para gestão da empresa Cantinho das Pizzas e do Açaí</span>
+                        <span className="lang-en">Complete ERP system for company management.</span>
                       </p>
-                      <a className="inline-flex items-center gap-2 text-primary text-sm font-bold group-hover:gap-3 transition-all"
+                      {/* <a className="inline-flex items-center gap-2 text-primary text-sm font-bold group-hover:gap-3 transition-all"
                         href="#">
-                        <span className="lang-pt">Estudo de Caso</span><span className="lang-en">Case Study</span> <span
+                        <span className="lang-pt">Conferir</span><span className="lang-en">Check</span> <span
                           className="material-symbols-outlined text-sm">arrow_forward</span>
-                      </a>
+                      </a> */}
                     </div>
                   </motion.div>
                 </div>
