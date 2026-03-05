@@ -337,7 +337,7 @@ export default function App() {
                     </button>
 
                     {openXP[index] && (
-                      <p className="text-slate-400 leading-relaxed mt-3">
+                      <p className="text-slate-400 text-[0.7rem] md:text-[0.9rem] leading-relaxed mt-3">
                         <span className="lang-pt">{job.description}</span>
                         <span className="lang-en">{job.description_en}</span>
                       </p>
