@@ -1,13 +1,28 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-primary: 37 244 106;
-  --color-background-dark: 0 0 0;
+  --default-font-family: 'Space Grotesk', sans-serif;
+  --primary: 37 244 106;
+  --background-dark: 0 0 0;
+}
+
+@utility text-primary {
+  color: rgb(var(--primary));
+}
+
+@utility bg-primary {
+  background-color: rgb(var(--primary));
+}
+
+@utility border-primary {
+  border-color: rgb(var(--primary));
+}
+
+@utility font-display {
+  font-family: var(--default-font-family);
 }
 
 ::selection {
