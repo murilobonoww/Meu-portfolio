@@ -6,6 +6,7 @@ import TextType from './components/TextType';
 import { motion } from "framer-motion"
 import Contact from "./components/Contact";
 import React from "react";
+import { ArrowRight, X } from 'lucide-react';
 
 export default function App() {
   const [lang, setLang] = useState('pt');
@@ -14,6 +15,8 @@ export default function App() {
   const [openXP0, setOpenXP0] = useState(false)
   const [openXP1, setOpenXP1] = useState(false)
   const [openXP2, setOpenXP2] = useState(false)
+  const [currentImg, setCurrentImg] = useState(0)
+  const [isProjectModalOpen, setIsProjectModalOpen] = useState(false)
 
   const techs = [
     { name: "JavaScript", icon: "js.png" },
@@ -90,6 +93,27 @@ export default function App() {
       updated[index] = !updated[index]
       return updated
     })
+  }
+
+  const erp_prints = [
+    { id: 0, source: 'print_erp_1.png' },
+    { id: 1, source: 'print_erp_2.png' },
+    { id: 2, source: 'print_erp_3.png' },
+    { id: 3, source: 'print_erp_4.png' },
+  ]
+
+  const nextImage = () => {
+    if (currentImg <= 2) {
+      setCurrentImg(prev => prev + 1)
+    }
+    else {
+      setCurrentImg(0)
+    }
+    console.log(currentImg)
+  }
+
+  const toggleProjectModal = () => {
+    setIsProjectModalOpen(!isProjectModalOpen)
   }
 
   return (
@@ -368,20 +392,53 @@ export default function App() {
                 <span className="lang-en">View all projects</span>
               </a> */}
             </div>
+
+            {isProjectModalOpen && (
+              <div className="modal-overlay">
+                <div className="modal">
+
+                  <div className="modal-image flex flex-col">
+                    <img id="projectImage" src={erp_prints[currentImg].source} />
+                    <button
+                      onClick={nextImage}
+                      className="text-white bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition-colors duration-300 active:bg-gray-400">
+                      <ArrowRight size={20} />
+                    </button>
+                  </div>
+
+                  <div className="modal-content">
+                    <button className="w-fit p-5 self-end" onClick={toggleProjectModal}>
+                      <X size={24} />
+                    </button>
+                    <h2 className="mt-5">Projeto Cantinho Desktop</h2>
+
+                    <p className="leading-relaxed pr-7">
+                      Sistema ERP que realiza gestão de todo o negócio de uma pizzaria em São Paulo.
+                      Automatiza atendimento ao cliente utilizando IA, processamento, histórico e impressão de pedidos, dashboard financeiro, mapa com localização em tempo-real de entregadores, controle de pedidos e muito mais!
+
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+            )}
+
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.25 }}
+                onClick={toggleProjectModal}
               >
                 <div
-                  className="group bg-white/5 rounded-xl border border-white/10 overflow-hidden hover:border-primary/40 transition-all">
+                  className="group bg-white/5 rounded-xl border border-white/10 overflow-hidden hover:border-primary/40 transition-all cursor-pointer">
                   <div className="h-48 bg-slate-800 relative overflow-hidden">
                     <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                       style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtCfVPfI5EzIy106PJJPajwQ-1baaWtEiefPyk1sC_wdW_y2C_M88ELqhpdChUwmvU6vTMuAStfua2GkAYbzHYo0uhd6GB7kqgNQJptMw8Cah4p9mx2Su0qhp7bSwi--KaVJDMZJo-mSgTc1tlen2QP1sQhqp0f9nxp0aAHm_XzhUDPMTn0gAPTwR9u1t8YOVFoaaTqctFOc47lb3Gu7x7fjdDBBHMRpc49KNNqxzKuLeCTAqNRIA7tnHiNohdXoEAUNO58og_HvE')" }}>
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent">
-                      <img src="print_erp.png" />
+                      <img src="print_erp_1.png" />
                     </div>
                   </div>
 
