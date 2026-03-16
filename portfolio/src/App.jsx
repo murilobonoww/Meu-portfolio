@@ -407,7 +407,7 @@ export default function App() {
                   </div>
 
                   <div className="modal-content">
-                    <button className="w-fit p-5 self-end" onClick={toggleProjectModal}>
+                    <button className="w-fit p-5 self-end cursor-pointer" onClick={toggleProjectModal}>
                       <X size={24} />
                     </button>
                     <h2 className="mt-5">Projeto Cantinho Desktop</h2>
