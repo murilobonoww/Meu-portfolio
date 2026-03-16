@@ -294,7 +294,7 @@ export default function App() {
                 }}
               >
                 <span
-                  className="material-symbols-outlined text-[160px]"
+                  className="material-symbols-outlined text-[160px]!"
                   style={{ color: "rgba(37,244,106,0.4)" }}
                 >
                   terminal
