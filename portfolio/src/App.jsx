@@ -386,39 +386,36 @@ export default function App() {
                   </h2>
                 </div>
               </div>
-              {/* <a className="text-primary text-sm font-bold border-b border-primary/30 hover:border-primary pb-1 transition-all"
-                href="#">
-                <span className="lang-pt">Ver todos os projetos</span>
-                <span className="lang-en">View all projects</span>
-              </a> */}
             </div>
 
             {isProjectModalOpen && (
               <div className="modal-overlay">
-                <div className="modal">
+                <div className="modal flex flex-col">
 
-                  <div className="modal-image flex flex-col">
-                    <img id="projectImage" src={erp_prints[currentImg].source} />
-                    <button
-                      onClick={nextImage}
-                      className="text-white bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition-colors duration-300 active:bg-gray-400">
-                      <ArrowRight size={20} />
-                    </button>
-                  </div>
-
-                  <div className="modal-content">
-                    <button className="w-fit p-5 self-end cursor-pointer" onClick={toggleProjectModal}>
+                  <div className="flex justify-center items-center py-6 relative">
+                    <h2 className="text-xs sm:text-sm lg:text-xl">Projeto Cantinho Desktop</h2>
+                    <button className="w-fit p-5 cursor-pointer absolute right-0" onClick={toggleProjectModal}>
                       <X size={24} />
                     </button>
-                    <h2 className="mt-5">Projeto Cantinho Desktop</h2>
-
-                    <p className="leading-relaxed pr-7">
-                      Sistema ERP que realiza gestão de todo o negócio de uma pizzaria em São Paulo.
-                      Automatiza atendimento ao cliente utilizando IA, processamento, histórico e impressão de pedidos, dashboard financeiro, mapa com localização em tempo-real de entregadores, controle de pedidos e muito mais!
-
-                    </p>
                   </div>
 
+                  <div className="flex flex-col items-center!">
+                    <div className="modal-image flex flex-col w-70 h-50 mb-7">
+                      <img id="projectImage" src={erp_prints[currentImg].source} />
+                      <button
+                        onClick={nextImage}
+                        className="text-white bg-gray-800 p-3 rounded-full hover:bg-gray-700 transition-colors duration-300 active:bg-gray-400 cursor-pointer">
+                        <ArrowRight size={20} />
+                      </button>
+                    </div>
+
+                    <div className="modal-content ">
+                      <p className="leading-relaxed text-xs lg:text-sm">
+                        Sistema ERP que realiza gestão completa de uma pizzaria em São Paulo.
+                        Automatiza atendimento ao cliente utilizando IA, processamento, histórico e impressão de pedidos, dashboard financeiro, mapa com localização em tempo-real de entregadores, controle de pedidos e muito mais!
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
