@@ -705,7 +705,7 @@ export default function App() {
             </div>
             <h2 className="text-lg font-bold tracking-tight text-white uppercase">MNB Portfolio</h2>
           </div>
-          <p className="  lg:text-slate-500 lg:text-sm">© 2024 Murilo Neves Bonow. <span className="lang-pt">Todos os direitos
+          <p className="text-center  lg:text-slate-500 lg:text-sm">© 2024 Murilo Neves Bonow. <span className="lang-pt">Todos os direitos
             reservados.</span><span className="lang-en">All rights reserved.</span></p>
           <div className="flex gap-6">
             <a className="text-slate-400 hover:text-primary transition-colors" href="#"><span
