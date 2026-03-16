@@ -392,7 +392,7 @@ export default function App() {
               <div className="modal-overlay">
                 <div className="modal flex flex-col">
 
-                  <div className="flex justify-center items-center py-6 relative">
+                  <div className="flex justify-center items-center py-6 relative border-b border-primary/20">
                     <h2 className="text-xs sm:text-sm lg:text-xl">Projeto Cantinho Desktop</h2>
                     <button className="w-fit p-5 cursor-pointer absolute right-0" onClick={toggleProjectModal}>
                       <X size={24} />
@@ -400,7 +400,7 @@ export default function App() {
                   </div>
 
                   <div className="flex flex-col items-center!">
-                    <div className="modal-image flex flex-col w-70 h-50 mb-7">
+                    <div className="modal-image flex flex-col w-70 h-50 my-7">
                       <img id="projectImage" src={erp_prints[currentImg].source} />
                       <button
                         onClick={nextImage}
