@@ -67,8 +67,8 @@ body {
     border-color: #25f46a;
     box-shadow: 0 0 20px rgba(37, 244, 106, 0.5);
 }
-#lang-toggle:checked ~ main .lang-pt { display: none; }
-#lang-toggle:not(:checked) ~ main .lang-en { display: none; }
+#lang-toggle:checked ~ * .lang-pt { display: none; }
+#lang-toggle:not(:checked) ~ * .lang-en { display: none; }
 #lang-toggle:checked ~ .fixed nav .lang-pt { display: none; }
 #lang-toggle:not(:checked) ~ .fixed nav .lang-en { display: none; }#lang-toggle:checked ~ .fixed #pill-highlight { 
     transform: translateX(100%); 
