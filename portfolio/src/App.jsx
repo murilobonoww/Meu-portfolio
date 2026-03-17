@@ -230,7 +230,7 @@ export default function App() {
                     typingSpeed={150}
                     pauseDuration={1500}
                     showCursor
-                    className="text-[2.7rem] md:text-7xl font-black leading-[1.1] tracking-tight text-white"
+                    className="text-[2.5rem] md:text-7xl font-black leading-[1.1] tracking-tight text-white"
                     cursorCharacter="|"
                     deletingSpeed={30}
                     variableSpeedEnabled={false}
@@ -321,9 +321,9 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-[1.2rem] md:text-3xl font-bold text-white tracking-tight">
-                  <span className="lang-pt">Experiência Profissional</span>
-                  <span className="lang-en">Professional Experience</span>
+                <h2 className="text-[1.7rem] lg:text-4xl font-bold text-white tracking-tight">
+                  <span className="lang-pt">Experiência</span>
+                  <span className="lang-en">Experience</span>
                 </h2>
 
               </motion.div>
@@ -344,12 +344,12 @@ export default function App() {
 
                   {/* COLUNA DIREITA - CONTEÚDO */}
                   <div className="pb-8">
-                    <h3 className="text-[1rem] md:text-xl font-bold text-white">
+                    <h3 className="text-[1.1rem] md:text-xl font-bold text-white">
                       <span className="lang-pt">{job.title}</span>
                       <span className="lang-en">{job.title_en}</span>
                     </h3>
 
-                    <p className="text-primary/80 text-[0.8rem] md:text-[1rem] font-medium mb-2">
+                    <p className="text-primary/80 text-[0.9rem] md:text-[1rem] font-medium mb-2">
                       {job.company} • {job.period}
                     </p>
 
@@ -361,7 +361,7 @@ export default function App() {
                     </button>
 
                     {openXP[index] && (
-                      <p className="text-slate-400 text-[0.7rem] md:text-[0.9rem] leading-relaxed mt-3">
+                      <p className="text-slate-400 text-[0.9rem] md:text-[0.9rem] leading-relaxed mt-3">
                         <span className="lang-pt">{job.description}</span>
                         <span className="lang-en">{job.description_en}</span>
                       </p>
@@ -378,11 +378,11 @@ export default function App() {
           <div className="max-w-300 flex flex-col justify-items-start mx-auto sm:mx-auto">
             <div className="flex justify-center mb-6">
               <div>
-                <div className="flex items-center border-b-2 border-primary/20 pb-3 gap-4 mb-2">
+                <div className="flex items-center border-b-2 border-t-2 border-primary/70 pb-3 pt-1 gap-4 mb-2">
                   <span className="material-symbols-outlined text-primary text-3xl">star</span>
-                  <h2 className="text-[1.4rem] font-bold text-white tracking-tight">
-                    <span className="lang-pt">Projeto em Destaque</span>
-                    <span className="lang-en">Featured Project</span>
+                  <h2 className="text-[1.7rem] font-bold text-white tracking-tight">
+                    <span className="lang-pt">Destaque</span>
+                    <span className="lang-en">Featured</span>
                   </h2>
                 </div>
               </div>
@@ -390,7 +390,7 @@ export default function App() {
 
             {isProjectModalOpen && (
               <div className="modal-overlay">
-                <div className="modal flex flex-col">
+                <div className="modal flex flex-col w-[calc(100vw-2rem)]! max-w-[450px]!">
 
                   <div className="flex justify-center items-center py-6 relative border-b border-primary/20">
                     <h2 className="text-xs sm:text-sm lg:text-xl">Projeto Cantinho Desktop</h2>
@@ -435,7 +435,7 @@ export default function App() {
                         style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtCfVPfI5EzIy106PJJPajwQ-1baaWtEiefPyk1sC_wdW_y2C_M88ELqhpdChUwmvU6vTMuAStfua2GkAYbzHYo0uhd6GB7kqgNQJptMw8Cah4p9mx2Su0qhp7bSwi--KaVJDMZJo-mSgTc1tlen2QP1sQhqp0f9nxp0aAHm_XzhUDPMTn0gAPTwR9u1t8YOVFoaaTqctFOc47lb3Gu7x7fjdDBBHMRpc49KNNqxzKuLeCTAqNRIA7tnHiNohdXoEAUNO58og_HvE')" }}>
                       </div>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent">
-                        <img src="print_erp_1.png" />
+                        <img src="login_erp_print.jpg" />
                       </div>
                     </div>
 
@@ -459,11 +459,6 @@ export default function App() {
                           <span className="lang-pt">Sistema ERP completo para gestão da empresa Cantinho das Pizzas e do Açaí</span>
                           <span className="lang-en">Complete ERP system for company management.</span>
                         </p>
-                        {/* <a className="inline-flex items-center gap-2 text-primary text-sm font-bold group-hover:gap-3 transition-all"
-                        href="#">
-                        <span className="lang-pt">Conferir</span><span className="lang-en">Check</span> <span
-                          className="material-symbols-outlined text-sm">arrow_forward</span>
-                      </a> */}
                       </div>
                     </motion.div>
                   </div>
@@ -478,7 +473,7 @@ export default function App() {
           <div className="max-w-[960px] mx-auto">
             <div className="flex items-center gap-4 mb-12">
               <span className="material-symbols-outlined text-primary text-3xl">school</span>
-              <h2 className="text-[1.8rem] font-bold text-white tracking-tight">
+              <h2 className="text-[1.7rem] font-bold text-white tracking-tight">
                 <span className="lang-pt">Educação</span>
                 <span className="lang-en">Education</span>
               </h2>
@@ -553,16 +548,8 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.25 }}
               >
-                {/* <GlitchText
-                  speed={0.3}
-                  enableShadows={false}
-                  enableOnHover={false}
-                  className='custom-class text-6xl! md:text-7xl! font-black leading-[1.1] tracking-tight text-primary! w-[600px]'
-                  style={{ color: "rgb(37, 244, 106) !important" }}
-                > */}
-                <p className="lang-pt text-[1.8rem]">Arsenal Técnico</p>
-                <p className="lang-en text-[1.8rem]">Technical Arsenal</p>
-                {/* </GlitchText> */}
+                <p className="lang-pt text-[1.7rem]">Arsenal Técnico</p>
+                <p className="lang-en text-[1.7rem]">Technical Arsenal</p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -606,10 +593,10 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="lang-pt text-[1.8rem] font-bold text-white mb-6 leading-tight">
+                <h2 className="lang-pt text-[1.7rem] font-bold text-white mb-6 leading-tight">
                   Vamos construir algo <span className="text-primary">extraordinário</span>
                 </h2>
-                <h2 className="lang-en text-4xl font-bold text-white mb-6 leading-tight">
+                <h2 className="lang-en text-[1.7rem] font-bold text-white mb-6 leading-tight">
                   Let's build something <span className="text-primary">extraordinary</span>
                 </h2>
               </motion.div>

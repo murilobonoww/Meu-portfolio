@@ -218,7 +218,7 @@ body {
 
 .modal {
   display: flex;
-  width: 900px;
+  /* width: 900px; */
   height: fit-content;
 
   background-color: black;
