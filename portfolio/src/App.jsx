@@ -336,7 +336,7 @@ export default function App() {
                   <div className="flex flex-col items-center gap-1">
                     <div className="flex items-center justify-center size-10 rounded-full border border-primary/40 bg-primary/5">
                       <span className="material-symbols-outlined text-primary/80 text-xl">
-                        code
+                        {index !== 2 ? 'code' : 'database'}
                       </span>
                     </div>
                     <div className="w-0.5 bg-primary/10 grow my-1"></div>
@@ -374,15 +374,15 @@ export default function App() {
           </div>
         </section>
 
-        <section className="py-24 px-6" id="projects">
-          <div className="max-w-[1200px] mx-auto">
-            <div className="flex justify-between items-end mb-6">
+        <section className="py-24 px-6 flex" id="projects">
+          <div className="max-w-300 flex flex-col justify-items-start mx-auto sm:mx-auto">
+            <div className="flex justify-center mb-6">
               <div>
-                <div className="flex items-center gap-4 mb-2">
-                  <span className="material-symbols-outlined text-primary text-3xl">grid_view</span>
+                <div className="flex items-center border-b-2 border-primary/20 pb-3 gap-4 mb-2">
+                  <span className="material-symbols-outlined text-primary text-3xl">star</span>
                   <h2 className="text-[1.4rem] font-bold text-white tracking-tight">
-                    <span className="lang-pt">Projetos em Destaque</span>
-                    <span className="lang-en">Featured Projects</span>
+                    <span className="lang-pt">Projeto em Destaque</span>
+                    <span className="lang-en">Featured Project</span>
                   </h2>
                 </div>
               </div>
@@ -420,55 +420,57 @@ export default function App() {
               </div>
             )}
 
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.25 }}
-                onClick={toggleProjectModal}
-              >
-                <div
-                  className="group bg-white/5 rounded-xl border border-white/10 overflow-hidden hover:border-primary/40 transition-all cursor-pointer">
-                  <div className="h-48 bg-slate-800 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                      style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtCfVPfI5EzIy106PJJPajwQ-1baaWtEiefPyk1sC_wdW_y2C_M88ELqhpdChUwmvU6vTMuAStfua2GkAYbzHYo0uhd6GB7kqgNQJptMw8Cah4p9mx2Su0qhp7bSwi--KaVJDMZJo-mSgTc1tlen2QP1sQhqp0f9nxp0aAHm_XzhUDPMTn0gAPTwR9u1t8YOVFoaaTqctFOc47lb3Gu7x7fjdDBBHMRpc49KNNqxzKuLeCTAqNRIA7tnHiNohdXoEAUNO58og_HvE')" }}>
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent">
-                      <img src="print_erp_1.png" />
-                    </div>
-                  </div>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.25 }}
-                  >
-
-                    <div className="p-6">
-                      <div className="flex gap-2 mb-3">
-                        <span
-                          className="text-[10px] font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">REACT.JS</span>
-                        <span
-                          className="text-[10px] font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">NODE.JS</span>
-                        <span
-                          className="text-[10px] font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">MySQL</span>
+            <div className="flex gap-6">
+              <div className="flex max-w-100">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.25 }}
+                  onClick={toggleProjectModal}
+                >
+                  <div
+                    className="group bg-white/5 rounded-xl border border-white/10 overflow-hidden hover:border-primary/40 transition-all cursor-pointer">
+                    <div className="h-48 bg-slate-800 relative overflow-hidden">
+                      <div className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                        style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtCfVPfI5EzIy106PJJPajwQ-1baaWtEiefPyk1sC_wdW_y2C_M88ELqhpdChUwmvU6vTMuAStfua2GkAYbzHYo0uhd6GB7kqgNQJptMw8Cah4p9mx2Su0qhp7bSwi--KaVJDMZJo-mSgTc1tlen2QP1sQhqp0f9nxp0aAHm_XzhUDPMTn0gAPTwR9u1t8YOVFoaaTqctFOc47lb3Gu7x7fjdDBBHMRpc49KNNqxzKuLeCTAqNRIA7tnHiNohdXoEAUNO58og_HvE')" }}>
                       </div>
-                      <h3 className="text-xl font-bold text-white mb-2">Sistema ERP</h3>
-                      <p className="text-slate-400 text-sm mb-4">
-                        <span className="lang-pt">Sistema ERP completo para gestão da empresa Cantinho das Pizzas e do Açaí</span>
-                        <span className="lang-en">Complete ERP system for company management.</span>
-                      </p>
-                      {/* <a className="inline-flex items-center gap-2 text-primary text-sm font-bold group-hover:gap-3 transition-all"
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent">
+                        <img src="print_erp_1.png" />
+                      </div>
+                    </div>
+
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.25 }}
+                    >
+
+                      <div className="p-6">
+                        <div className="flex gap-2 mb-3">
+                          <span
+                            className="text-[10px] font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">REACT.JS</span>
+                          <span
+                            className="text-[10px] font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">NODE.JS</span>
+                          <span
+                            className="text-[10px] font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">MySQL</span>
+                        </div>
+                        <h3 className="text-xl font-bold text-white mb-2">Sistema ERP</h3>
+                        <p className="text-slate-400 text-sm mb-4">
+                          <span className="lang-pt">Sistema ERP completo para gestão da empresa Cantinho das Pizzas e do Açaí</span>
+                          <span className="lang-en">Complete ERP system for company management.</span>
+                        </p>
+                        {/* <a className="inline-flex items-center gap-2 text-primary text-sm font-bold group-hover:gap-3 transition-all"
                         href="#">
                         <span className="lang-pt">Conferir</span><span className="lang-en">Check</span> <span
                           className="material-symbols-outlined text-sm">arrow_forward</span>
                       </a> */}
-                    </div>
-                  </motion.div>
-                </div>
-              </motion.div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </div>
             </div>
+
           </div>
         </section>
 
