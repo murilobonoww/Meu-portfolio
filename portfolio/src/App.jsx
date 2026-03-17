@@ -58,6 +58,21 @@ export default function App() {
     }
   ]
 
+  const education = [
+    {
+      title: "Curso Técnico em Programação de Jogos Digitais",
+      titleEn: "Technical Course in Digital Game Programming",
+      institution: "Senac",
+      period: "2020 - 2022"
+    },
+    {
+      title: "Graduação em Análise e Desenvolvimento de Sistemas",
+      titleEn: "Bachelor's Degree in Systems Analysis and Development",
+      institution: "Senac",
+      period: "2023 - 2025"
+    }
+  ]
+
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     const links = document.querySelectorAll("nav a");
@@ -209,15 +224,7 @@ export default function App() {
         <section className="relative min-h-[80vh] flex items-center justify-center px-6 py-20 -mt-10 md:mt-0" id="hero">
           <div className="max-w-[1200px] w-full grid lg:grid-cols-2 gap-12 items-center">
             <div className="flex flex-col gap-6">
-              <div
-                className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider w-fit">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-                </span>
-                <span className="lang-pt">Disponível para novos projetos</span>
-                <span className="lang-en">Available for new projects</span>
-              </div>
+            
 
               <div>
                 <motion.div
@@ -315,13 +322,13 @@ export default function App() {
         <section className="py-24 px-6 bg-white/2" id="experience">
           <div className="max-w-240 mx-auto">
             <div className="flex items-center gap-4 mb-12">
-              <span className="material-symbols-outlined text-primary text-3xl">work_history</span>
+              <span className="material-symbols-outlined text-primary text-3xl md:text-4xl!">work_history</span>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="text-[1.7rem] lg:text-4xl font-bold text-white tracking-tight">
+                <h2 className="text-[1.7rem] md:text-[2.2rem] lg:text-4xl font-bold text-white tracking-tight">
                   <span className="lang-pt">Experiência</span>
                   <span className="lang-en">Experience</span>
                 </h2>
@@ -344,7 +351,7 @@ export default function App() {
 
                   {/* COLUNA DIREITA - CONTEÚDO */}
                   <div className="pb-8">
-                    <h3 className="text-[1.1rem] md:text-xl font-bold text-white">
+                    <h3 className="text-[1.1rem] md:text-2xl font-bold text-white">
                       <span className="lang-pt">{job.title}</span>
                       <span className="lang-en">{job.title_en}</span>
                     </h3>
@@ -361,7 +368,7 @@ export default function App() {
                     </button>
 
                     {openXP[index] && (
-                      <p className="text-slate-400 text-[0.9rem] md:text-[0.9rem] leading-relaxed mt-3">
+                      <p className="text-slate-400 text-[0.9rem] md:text-[1.2rem] leading-relaxed mt-3">
                         <span className="lang-pt">{job.description}</span>
                         <span className="lang-en">{job.description_en}</span>
                       </p>
@@ -379,8 +386,8 @@ export default function App() {
             <div className="flex justify-center mb-6">
               <div>
                 <div className="flex items-center border-b-2 border-t-2 border-primary/70 pb-3 pt-1 gap-4 mb-2">
-                  <span className="material-symbols-outlined text-primary text-3xl">star</span>
-                  <h2 className="text-[1.7rem] font-bold text-white tracking-tight">
+                  <span className="material-symbols-outlined text-primary text-3xl md:text-[2.5rem]!">star</span>
+                  <h2 className="text-[1.7rem] md:text-[2.2rem] font-bold text-white tracking-tight">
                     <span className="lang-pt">Destaque</span>
                     <span className="lang-en">Featured</span>
                   </h2>
@@ -390,17 +397,17 @@ export default function App() {
 
             {isProjectModalOpen && (
               <div className="modal-overlay">
-                <div className="modal flex flex-col w-[calc(100vw-2rem)]! max-w-[450px]!">
+                <div className="modal flex flex-col">
 
                   <div className="flex justify-center items-center py-6 relative border-b border-primary/20">
-                    <h2 className="text-xs sm:text-sm lg:text-xl">Projeto Cantinho Desktop</h2>
+                    <h2 className="text-lg sm:text-sm md:text-2xl">Cantinho Desktop</h2>
                     <button className="w-fit p-5 cursor-pointer absolute right-0" onClick={toggleProjectModal}>
                       <X size={24} />
                     </button>
                   </div>
 
                   <div className="flex flex-col items-center!">
-                    <div className="modal-image flex flex-col w-70 h-50 my-7">
+                    <div className="modal-image flex flex-col w-[80%] h-50 my-5 bk__androidGrande:my-10 md:my-16">
                       <img id="projectImage" src={erp_prints[currentImg].source} />
                       <button
                         onClick={nextImage}
@@ -410,7 +417,7 @@ export default function App() {
                     </div>
 
                     <div className="modal-content ">
-                      <p className="leading-relaxed text-xs lg:text-sm">
+                      <p className="leading-relaxed text-sm md:text-[1.2rem] text-slate-400">
                         Sistema ERP que realiza gestão completa de uma pizzaria em São Paulo.
                         Automatiza atendimento ao cliente utilizando IA, processamento, histórico e impressão de pedidos, dashboard financeiro, mapa com localização em tempo-real de entregadores, controle de pedidos e muito mais!
                       </p>
@@ -448,14 +455,14 @@ export default function App() {
                       <div className="p-6">
                         <div className="flex gap-2 mb-3">
                           <span
-                            className="text-[10px] font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">REACT.JS</span>
+                            className="text-[10px] md:text-[13px] font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">REACT.JS</span>
                           <span
-                            className="text-[10px] font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">NODE.JS</span>
+                            className="text-[10px] md:text-[13px] font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">NODE.JS</span>
                           <span
-                            className="text-[10px] font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">MySQL</span>
+                            className="text-[10px] md:text-[13px] font-bold px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20">MySQL</span>
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-2">Sistema ERP</h3>
-                        <p className="text-slate-400 text-sm mb-4">
+                        <h3 className="text-xl md:text-2xl font-bold text-white mb-2">Sistema ERP</h3>
+                        <p className="text-slate-400 text-sm md:text-[1.2rem] mb-4">
                           <span className="lang-pt">Sistema ERP completo para gestão da empresa Cantinho das Pizzas e do Açaí</span>
                           <span className="lang-en">Complete ERP system for company management.</span>
                         </p>
@@ -469,78 +476,44 @@ export default function App() {
           </div>
         </section>
 
-        <section className="py-24 px-6 bg-white/[0.02]" id="education">
-          <div className="max-w-[960px] mx-auto">
+        <section className="py-24 px-6 bg-white/2" id="education">
+          <div className="max-w-240 mx-auto">
             <div className="flex items-center gap-4 mb-12">
-              <span className="material-symbols-outlined text-primary text-3xl">school</span>
-              <h2 className="text-[1.7rem] font-bold text-white tracking-tight">
+              <span className="material-symbols-outlined text-primary text-3xl md:text-[2.5rem]!">school</span>
+              <h2 className="text-[1.7rem] md:text-[2.2rem] font-bold text-white tracking-tight">
                 <span className="lang-pt">Educação</span>
                 <span className="lang-en">Education</span>
               </h2>
             </div>
-            <div className="grid gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0 }}
-              >
-                <div
-                  className="p-8 rounded-2xl bg-white/[0.03] backdrop-blur-xl border border-white/10 hover:border-primary/30 transition-all group">
-                  <div className="flex items-center justify-between mb-4">
-                    <span
-                      className="text-primary text-xs font-bold uppercase tracking-widest px-3 py-1 bg-primary/10 rounded-full">2026 - 2030</span>
-                    <span
-                      className="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors">school</span>
-                  </div>
-                  <h3 className="lang-pt text-xl font-bold text-white">Bacharelado em Ciência da Computação</h3>
-                  <h3 className="lang-en text-xl font-bold text-white">Bachelor's Degree in Computer Science</h3>
-                  <p className="text-slate-400 mt-2">Estácio</p>
-                </div>
-              </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.25 }}
-              >
-                <div
-                  className="p-8 rounded-2xl bg-white/[0.03] backdrop-blur-xl border border-white/10 hover:border-primary/30 transition-all group">
-                  <div className="flex items-center justify-between mb-4">
-                    <span
-                      className="text-primary text-xs font-bold uppercase tracking-widest px-3 py-1 bg-primary/10 rounded-full">2023 - 2025</span>
-                    <span
-                      className="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors">school</span>
+            {education.map((edu, index) => {
+              return (
+                <motion.div key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.25 * index }}
+                >
+                  <div className="p-8 rounded-2xl bg-white/3 backdrop-blur-xl border border-white/10 hover:border-primary/30 transition-all group mb-10">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-primary text-xs font-bold uppercase tracking-widest px-3 py-1 bg-primary/10 rounded-full">
+                        {edu.period}
+                      </span>
+                      <span className="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors">
+                        school
+                      </span>
+                    </div>
+                    <h3 className="lang-pt text-xl font-bold text-white">{edu.title}</h3>
+                    <h3 className="lang-en text-xl font-bold text-white">{edu.titleEn}</h3>
+                    <p className="text-slate-400 mt-2">{edu.institution}</p>
                   </div>
-                  <h3 className="lang-pt text-xl font-bold text-white">Graduação em Análise e Desenvolvimento de Sistemas</h3>
-                  <h3 className="lang-en text-xl font-bold text-white">Bachelor's Degree in Systems Analysis and Development</h3>
-                  <p className="text-slate-400 mt-2">Senac</p>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-              >
-                <div
-                  className="p-8 rounded-2xl bg-white/[0.03] backdrop-blur-xl border border-white/10 hover:border-primary/30 transition-all group">
-                  <div className="flex items-center justify-between mb-4">
-                    <span
-                      className="text-primary text-xs font-bold uppercase tracking-widest px-3 py-1 bg-primary/10 rounded-full">2020 - 2022</span>
-                    <span
-                      className="material-symbols-outlined text-primary/40 group-hover:text-primary transition-colors">school</span>
-                  </div>
-                  <h3 className="lang-pt text-xl font-bold text-white">Curso Técnico em Programação de Jogos Digitais</h3>
-                  <h3 className="lang-en text-xl font-bold text-white">Technical Course in Digital Game Programming</h3>
-                  <p className="text-slate-400 mt-2">Senac</p>
-                </div>
-              </motion.div>
-            </div>
+                </motion.div>
+              )
+            })}
           </div>
         </section>
 
         <section className="py-24 px-6" id="skills">
-          <div className="max-w-[1200px] mx-auto">
+          <div className="max-w-300 mx-auto">
             <div className="text-center! mb-16 ">
 
               <motion.div
@@ -548,8 +521,9 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.25 }}
               >
-                <p className="lang-pt text-[1.7rem]">Arsenal Técnico</p>
-                <p className="lang-en text-[1.7rem]">Technical Arsenal</p>
+                <span className="material-symbols-outlined text-primary text-[2rem]! md:text-[2.5rem]!">construction</span>
+                <p className="lang-pt text-[1.7rem] md:text-[2.2rem] font-bold tracking-tight">Arsenal Técnico</p>
+                <p className="lang-en text-[1.7rem] md:text-[2.2rem] font-bold tracking-tight">Technical Arsenal</p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -585,36 +559,27 @@ export default function App() {
           </div>
         </section>
 
-        <section className="py-24 px-6 bg-white/[0.02]" id="contact">
-          <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-16">
+        <section className="py-24 px-3 bk__androidGrande:px-6 bg-white/2" id="contact">
+          <div className="max-w-300 mx-auto grid md:grid-cols-2 gap-16">
             <div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h2 className="lang-pt text-[1.7rem] font-bold text-white mb-6 leading-tight">
-                  Vamos construir algo <span className="text-primary">extraordinário</span>
-                </h2>
-                <h2 className="lang-en text-[1.7rem] font-bold text-white mb-6 leading-tight">
-                  Let's build something <span className="text-primary">extraordinary</span>
-                </h2>
+                <div className="flex items-center mb-6">
+                  <div className="size-12 rounded-lg flex items-center justify-center">
+                    <span className="material-symbols-outlined text-primary">call</span>
+                  </div>
+                  <h2 className="lang-pt text-[1.8rem] text-primary font-bold leading-tight">
+                    Contato
+                  </h2>
+
+                  <h2 className="lang-en text-[1.8rem] text-primary font-bold leading-tight">
+                    Contact
+                  </h2>
+                </div>
               </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                <p className="text-slate-400 mb-8 leading-relaxed">
-                  <span className="lang-pt">Quer você tenha uma ideia formada ou apenas uma centelha de inspiração, estou aqui
-                    para ajudar a transformar sua visão em realidade através de engenharia robusta.</span>
-                  <span className="lang-en">Whether you have a fully-formed idea or just a spark of inspiration, I'm here to help
-                    bring your vision to life through robust engineering.</span>
-                </p>
-              </motion.div>
-
-
 
               <div className="space-y-6">
                 <motion.div

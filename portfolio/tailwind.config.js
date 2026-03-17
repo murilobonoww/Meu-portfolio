@@ -9,7 +9,8 @@ export default {
       },
       fontFamily: {
         display: ["Space Grotesk", "sans-serif"], // sempre coloque fallback
-      }
+      },
+      
     },
   },
   plugins: [],

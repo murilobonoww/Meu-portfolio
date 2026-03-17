@@ -7,6 +7,7 @@
   --default-font-family: 'Space Grotesk', sans-serif;
   --color-primary: rgb(37 244 106);
   --color-background-dark: #000;
+  --breakpoint-bk__androidGrande: 412px;
 }
 
 ::selection {
@@ -218,7 +219,8 @@ body {
 
 .modal {
   display: flex;
-  /* width: 900px; */
+  width: 90%;
+  max-width: 450px;
   height: fit-content;
 
   background-color: black;
